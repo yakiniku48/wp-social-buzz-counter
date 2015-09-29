@@ -4,7 +4,7 @@ Plugin Name: Social Buzz Counter
 Plugin URI: http://
 Description: Facebook shared count and Twitter tweeted count -> custom field social_buzz_count.
 Author: Hideyuki Motoo
-Author URI: http://motoo.net/
+Author URI: http://nearly.jp/
 Version: 0.1
 */
 

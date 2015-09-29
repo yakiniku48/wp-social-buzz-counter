@@ -4,8 +4,9 @@ require_once '../../../../wp-load.php';
 $url = rawurldecode( $_GET[ 'url' ] );
 $post_id = url_to_postid( $url );
 
-$json = json_decode( @file_get_contents( 'https://urls.api.twitter.com/1/urls/count.json?url=' . rawurldecode( $url ) ) );
-$twitter_count = ( isset( $json->count ) ) ? $json->count : 0;
+//$json = json_decode( @file_get_contents( 'https://urls.api.twitter.com/1/urls/count.json?url=' . rawurldecode( $url ) ) );
+//$twitter_count = ( isset( $json->count ) ) ? $json->count : 0;
+$twitter_count = 0;
 
 $json = json_decode( @file_get_contents( 'https://graph.facebook.com/?id=' . rawurlencode( $url ) ) );
 $facebook_count = ( isset( $json->shares ) ) ? $json->shares : 0;
@@ -28,6 +29,7 @@ window.fbAsyncInit = function () {
 	);
 };
 
+/*
 window.twttr = ( function ( d, s, id ) {
 	var t, js, fjs = d.getElementsByTagName( s )[ 0 ];
 	if ( d.getElementById( id ) ) return; js = d.createElement( s ); js.id = id;
@@ -40,6 +42,7 @@ twttr.ready( function ( twttr ) {
 		function ( intent_event ) { social_buzz_count(); }
 	);
 });
+*/
 
 function social_buzz_count() {
 	jQuery.get( "<?php echo $_SERVER[ 'SCRIPT_NAME' ]; ?>", {
