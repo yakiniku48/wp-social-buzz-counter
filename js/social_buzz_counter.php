@@ -36,7 +36,7 @@ function social_buzz_count_update() {
 		},
 		function ( json ) {
 			if ( json.shares != null ) {
-				jQuery.post( "<?php echo plugins_url(); ?>/social-buzz-counter/js/social_buzz_count_update.php", {
+				jQuery.post( "<?php echo plugins_url(); ?>/wp-social-buzz-counter/js/social_buzz_count_update.php", {
 					post_id: "<?php echo $post_id; ?>",
 					shares: json.shares
 				} );
