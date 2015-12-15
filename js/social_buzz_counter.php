@@ -1,5 +1,9 @@
 <?php
 require_once '../../../../wp-load.php';
+
+$url = rawurldecode( $_GET[ 'url' ] );
+$post_id = url_to_postid( $url );
+
 header( 'Content-type: application/javascript' );
 ?>
 // Code is Poetry
