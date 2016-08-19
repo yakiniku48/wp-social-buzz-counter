@@ -33,8 +33,8 @@ function social_buzz_count_update() {
 	)
 	.done( function ( fbJson, twJson ) {
 		var buzzCount = 0;
-		if ( fbJson[0].shares != null ) {
-			buzzCount += parseInt( fbJson[0].shares );
+		if ( fbJson[0].share != null && fbJson[0].share.share_count ) {
+			buzzCount += parseInt( fbJson[0].share.share_count );
 		}
 		if ( twJson[0].count != null ) {
 			buzzCount += parseInt( twJson[0].count );
