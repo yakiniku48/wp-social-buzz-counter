@@ -9,7 +9,7 @@ Version: 0.1
 */
 
 function sbc_wp_enqueue_scripts() {
-	if ( !is_admin() && is_single() ) {
+	if ( !is_admin() && is_single() && !is_preview() ) {
 		wp_enqueue_script( 'social_buzz_counter', plugins_url( 'js/social_buzz_counter.php?url=' . rawurlencode( get_the_permalink() ), __FILE__ ), array( 'jquery' ), '', true );
 	}
 }
